@@ -20,7 +20,7 @@ let AppHandler = {
   appWillQuit(){},
   appDidQuit(){},
   allWindowsAreClosed(){
-    app.quit();
+    
   }
 
 };
