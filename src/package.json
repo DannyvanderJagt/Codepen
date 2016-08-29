@@ -2,7 +2,7 @@
   "name": "Codepen",
   "version": "0.0.1",
   "description": "Codepen Desktop Client",
-  "main": "index.js",
+  "main": "main-process/index.js",
   "scripts": {
     "compile": "gulp"
   },
