@@ -3,10 +3,12 @@
 
 
 # Project Structure
-- *docs* - Documentation for Contributers
+- *docs* - Documentation for Contributers.
 - *build* - Contains the build process.
-- *app* - All the code for the app.
-- *dist* - Compiled code from `/app`.
+- *src* - All the code for the app.
+- *app* - Compiled code from `/src`.
+- *dist* - Contains releases.
 
 # Used Libs
-- *builder* - electron-builder
+- *Builder* - [Electron Builder](https://github.com/electron-userland/electron-builder)
+- *Release Server* - [Nuts](https://github.com/GitbookIO/nuts)
