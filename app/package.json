@@ -1,0 +1,11 @@
+{
+  "name": "codepen",
+  "version": "0.0.1",
+  "description": "Codepen Desktop Client",
+  "main": "index.js",
+  "scripts": {
+    "compile": "gulp"
+  },
+  "author": "Danny van der Jagt",
+  "license": "MIT"
+}
