@@ -7,7 +7,7 @@ const path = require('path');
 
 gulp.task(
 	'compile-sass',
-	['compile-empty-dist-directory'],
+	[],
 	() => {
 	  return gulp
 	    .src(

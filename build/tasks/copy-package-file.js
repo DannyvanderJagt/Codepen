@@ -5,7 +5,7 @@ const plumber = require('gulp-plumber');
 
 gulp.task(
 	'compile-copy-package-file', 
-	['compile-empty-dist-directory'],
+	[],
 	() => {
 		return gulp
 			.src(

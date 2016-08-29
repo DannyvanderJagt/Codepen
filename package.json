@@ -24,6 +24,7 @@
     "gulp-plumber": "^1.1.0",
     "gulp-pug": "^3.0.4",
     "gulp-sass": "^2.3.2",
+    "gulp-sequence": "^0.4.6",
     "through2": "^2.0.1"
   },
   "build": {
@@ -32,8 +33,18 @@
     "dmg": {
       "title": "Codepen Installer",
       "contents": [
-        { "x": 490, "y": 245, "type": "link", "path": "/Applications" },
-        { "x": 155, "y": 245, "type": "file", "path": "Codepen.app" }
+        {
+          "x": 490,
+          "y": 245,
+          "type": "link",
+          "path": "/Applications"
+        },
+        {
+          "x": 155,
+          "y": 245,
+          "type": "file",
+          "path": "Codepen.app"
+        }
       ]
     }
   }

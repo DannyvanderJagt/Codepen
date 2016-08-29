@@ -3,7 +3,7 @@ const config = require('../config');
 
 gulp.task(
 	'compile-assets', 
-	['compile-empty-dist-directory'], 
+	[], 
 	() => {
 	  return gulp
 	    .src(

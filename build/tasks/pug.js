@@ -5,7 +5,7 @@ const pug = require('gulp-pug');
 
 gulp.task(
 	'compile-pug', 
-	['compile-empty-dist-directory'],
+	[],
 	() => {
 		return gulp
 			.src(

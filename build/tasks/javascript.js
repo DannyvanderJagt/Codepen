@@ -7,7 +7,7 @@ const babel = require('gulp-babel');
 
 gulp.task(
   'compile-javascript', 
-  ['compile-empty-dist-directory'],
+  [],
   () => {
     return gulp
       .src(
