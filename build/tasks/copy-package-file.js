@@ -8,7 +8,10 @@ gulp.task(
 	['compile-empty-dist-directory'],
 	() => {
 		return gulp
-			.src(config.compile.source + '/package.json')
+			.src(
+				config.compile.source + '/package.json',
+				{base: config.compile.source}
+			)
 			.pipe(plumber())
 			.pipe(gulp.dest(config.compile.dest))
 	}

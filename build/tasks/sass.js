@@ -10,7 +10,10 @@ gulp.task(
 	['compile-empty-dist-directory'],
 	() => {
 	  return gulp
-	    .src(config.compile.source + '/**/*.scss')
+	    .src(
+	    	config.compile.source + '/**/*.scss',
+	    	{base: config.compile.source}
+	    )
 	    .pipe(importFromRoot(config.sassImportFromRoot))
 	    .pipe(plumber())
 	    .pipe(sass())

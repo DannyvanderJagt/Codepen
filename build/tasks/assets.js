@@ -6,11 +6,10 @@ gulp.task(
 	['compile-empty-dist-directory'], 
 	() => {
 	  return gulp
-	    .src([
-	    	config.compile.source + '/**/*.svg', 
-	    	config.compile.source + '/**/*.png', 
-	    	config.compile.source + '/**/*.jpg',
-	    ])
+	    .src(
+	    	config.compile.source + '/render-process/assets/**/*.*', 
+	    	{base: config.compile.source}
+	    )
 	    .pipe(gulp.dest(config.compile.dest))
 	}
 );

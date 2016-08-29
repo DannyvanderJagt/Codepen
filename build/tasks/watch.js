@@ -7,13 +7,7 @@ gulp.task(
 	() => {
 	  gulp.watch(config.compile.source + '/**/*.pug', ['compile-pug']);
 	  gulp.watch(config.compile.source + '/**/*.scss', ['compile-sass']);
-	  gulp.watch(config.compile.source + '/**/*.js', ['compile-js']);
-	  gulp.watch([
-		  	config.compile.source + '/**/*.svg',
-		  	config.compile.source + '/**/*.jpg',
-		  	config.compile.source + '/**/*.png',
-	  	], 
-	  	['compile-assets']
-	  );
+	  gulp.watch(config.compile.source + '/**/*.js', ['compile-javascript']);
+	  gulp.watch(config.compile.source + '/render-process/assets/**/*.*', ['compile-assets']);
 	}
 );

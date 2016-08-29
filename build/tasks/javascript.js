@@ -10,7 +10,10 @@ gulp.task(
   ['compile-empty-dist-directory'],
   () => {
     return gulp
-      .src([config.compile.source + '/**/*.js'])
+      .src(
+        config.compile.source + '/**/*.js',
+        {base: config.compile.source}
+      )
       .pipe(plumber())
       .pipe(importFromRoot(config.jsImportFromRoot))
       .pipe(babel({
