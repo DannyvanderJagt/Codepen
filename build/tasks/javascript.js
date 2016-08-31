@@ -11,7 +11,12 @@ gulp.task(
   () => {
     return gulp
       .src(
-        config.compile.source + '/**/*.js',
+        [
+          config.compile.source + '/**/*.js',
+          config.compile.source + '/**/*.jsx',
+          `!${config.compile.source}/node_modules`,
+          `!${config.compile.source}/node_modules/**`,
+        ],
         {base: config.compile.source}
       )
       .pipe(plumber())

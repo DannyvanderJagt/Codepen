@@ -10,7 +10,7 @@ import electron, {
   BrowserWindow,
 } from 'electron';
 import config from '../config.app';
-import appHandler from './appHandler';
+import appHandler from './app-handler';
 
 let Window = {
   activeWindow: undefined,

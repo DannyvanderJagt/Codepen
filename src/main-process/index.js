@@ -12,6 +12,6 @@ crashReporter.start({
 });
 
 // App & Window handler.
-import App from './appHandler';
+import App from './app-handler';
 import Window from './window';
 import Menu from './menu';

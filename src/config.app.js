@@ -3,8 +3,12 @@ import path from 'path';
 export default {
   devModeCanBeEnabled: true,
 
+  cache: {
+  	path: path.join(__dirname, '../cache'),
+  },
+
   app: {
-    path: 'file://' + path.join(__dirname, 'render-process/index.html'),
+    path: `file://${__dirname}/render-process/index.html`,
     backgroundColorForWindow: '#212121',
   },
 

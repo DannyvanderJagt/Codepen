@@ -14,15 +14,11 @@ let AppHandler = {
 
   appIsReady(){
     this.isReady = true;
-    console.log('ready');
   },
 
   appWillQuit(){},
   appDidQuit(){},
-  allWindowsAreClosed(){
-    
-  }
-
+  allWindowsAreClosed(){}
 };
 
 // Automatic startup.

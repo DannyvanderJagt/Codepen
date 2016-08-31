@@ -10,12 +10,13 @@
     "dist": "build --mac",
     "postinstall": "install-app-deps"
   },
-  "author": "Danny van der Jagt",
+  "author": "The Codepen Community",
   "license": "MIT",
   "devDependencies": {
     "appdmg": "^0.4.5",
     "babel-preset-es2015": "^6.14.0",
     "babel-preset-react": "^6.11.1",
+    "del": "^2.2.2",
     "electron": "^1.3.4",
     "electron-builder": "^6.1.0",
     "fs-extra": "^0.30.0",
