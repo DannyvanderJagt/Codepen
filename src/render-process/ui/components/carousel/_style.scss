@@ -1,0 +1,11 @@
+.cdpn-carousel{
+	flex: 1;
+	overflow: hidden;
+}
+
+.cdpn-carousel-slider{
+	height: 100%;
+	display: flex;
+	width: 300%;
+	transition: transform .6s ease-in-out;
+}

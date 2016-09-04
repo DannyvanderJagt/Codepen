@@ -3,9 +3,9 @@ import fs from 'fs-extra';
 import request from 'request';
 import urls from './url';
 import path from 'path';
-import config from '../../config.app';
-import cache from '../services/cache';
-import state from '../state';
+import config from '@../config.app';
+import cache from '@services/cache';
+import state from '@state';
 
 let Codepen = {
 	get(hash, args = [], cb){

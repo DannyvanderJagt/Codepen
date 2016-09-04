@@ -1,0 +1,28 @@
+.cdpn-window-controls{
+  height: $ui-window-controls-height;
+  width: 100%;
+  background: $ui-menu-background;
+  transition: all .2s ease-in-out;
+
+  display: flex;
+  align-items: center;
+  -webkit-app-region: drag;
+  border-bottom: $ui-border;
+  z-index: 9999;
+
+  & ~ .cdpn-full-view{
+    height: calc(100% - $ui-window-controls-height);
+  }
+
+  &.overlay{
+    position: absolute;
+    transform: translateY(-30px);
+    opacity: 0;
+    background: $ui-menu-background;
+    
+    &:hover{
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+h1, h2, h3, h4, h5{
+  display: block;
+  margin: 2px;
+}
+
+h1{
+  color: $white;
+  font-size: 2em;
+}
+
+h2{
+  color: $electric-blue;
+  font-size: 1em;
+
+  transition: opacity .3s;
+  cursor: pointer;
+
+  &:hover{
+    opacity: .7;
+  }
+}
+
+h3{
+  color: transparentize($white, .7);
+  font-size: .9em;
+}

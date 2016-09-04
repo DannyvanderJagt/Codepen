@@ -1,0 +1,14 @@
+*{
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+body, html{
+  background: $ui-background;
+  height: 100%;
+  display: flex;
+  flex: 1;
+
+  user-select: none;
+  overflow: hidden;
+}

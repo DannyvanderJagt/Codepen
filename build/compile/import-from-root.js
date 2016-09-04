@@ -10,7 +10,7 @@ module.exports = (opts) => {
 
   return through.obj(function(file, enc, cb){
     var content = file.contents.toString();
-    
+
     content = content.replace(regex, function(all, pre, match, post){
       // Produce a relative path.
       let base;

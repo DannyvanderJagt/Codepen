@@ -24,7 +24,7 @@ let stateHandler = {
 
 		// Setup state.
 		this.state = this.getDefaultState();
-		this.state = this.getSavedState();
+		this.set(this.getSavedState());
 
 		this.setApi();
 	},
@@ -96,6 +96,9 @@ let stateHandler = {
 	},
 
 	setApi(state){
+		if(!this.state){
+			this.state = {};
+		}
 		this.state.set = this.set.bind(this);
 		return this;
 	},
@@ -105,7 +108,8 @@ let stateHandler = {
 stateHandler.performSetup();
 
 // For Debugging...
-window.state = stateHandler.state;
+window.cdpn ? null : window.cdpn = {};
+window.cdpn.state = stateHandler.state;
 
 export default stateHandler.state;
 export {

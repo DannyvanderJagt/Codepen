@@ -1,4 +1,5 @@
 const Path = require('path');
+const pkg = require('../package');
 
 module.exports = {
 	compile: {
@@ -6,9 +7,16 @@ module.exports = {
 		source: './src',
 	},
 
+	// See electron-builder - devMetadata
+	release: {
+		 directories: {
+      output: `./dist/${pkg.version}`
+    }
+	},
+
 	// Sass
 	sassImportFromRoot: {
-		regex: /(import ? [\s\S]+? ? from [\'\"])\@(.+?)([\'\"].*)/g,
+		regex: /(@import\s[\'\"])\@(.+)([\'\"];?)/g,
 		paths: [
 			Path.join(__dirname, '../src/render'),
 	    Path.join(__dirname, '../src/main'),

@@ -2,12 +2,15 @@ const gulp = require('gulp');
 const sequence = require('gulp-sequence');
 
 // Compile tasks.
-require('./tasks/clean');
-require('./tasks/pug');
-require('./tasks/sass');
-require('./tasks/javascript');
-require('./tasks/assets');
-require('./tasks/watch');
+require('./compile/clean');
+require('./compile/pug');
+require('./compile/sass');
+require('./compile/javascript');
+require('./compile/assets');
+require('./compile/watch');
+
+// Release tasks.
+require('./release');
 
 // Main tasks.
 gulp.task('default', ['compile']);
@@ -22,3 +25,9 @@ gulp.task('compile', sequence(
 	]
 	)
 );
+
+gulp.task('release', sequence(
+	'compile',
+	'release-windows',
+	'release-mac'
+));

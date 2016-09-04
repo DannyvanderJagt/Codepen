@@ -1,0 +1,57 @@
+@keyframes fade-in{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out{
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
+@keyframes show{
+  0%{
+    visibility: hidden;
+    opacity: 0;
+  }
+  100%{
+    visibility: block;
+    opacity: 1;
+  }
+}
+
+@keyframes hide{
+  0%{
+    visibility: block;
+    opacity: 1;
+  }
+  100%{
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+@keyframes slide-up{
+  0%{
+    transform: translateY(0%);
+  }
+  100%{
+    transform: translateY(-100%)
+  }
+}
+
+@keyframes slide-down{
+  0%{
+    transform: translateY(-100%);
+  }
+  100%{
+    transform: translateY(0%)
+  }
+}

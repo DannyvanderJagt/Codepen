@@ -1,0 +1,26 @@
+.cdpn-label{
+  color: rgba(255,255,255,.5);
+  width: 300px;
+  margin: 15px 0px;
+  font-size: .85em;
+}
+
+.cdpn-input{
+  height: 30px;
+  width: 300px;
+  background: $onyx;
+  outline: none;
+  border: 1px solid transparent;
+  border-radius: 3px;
+
+  color: white;
+  font-size: .9em;
+  padding: 0px 10px;
+
+  &:focus{
+    border-bottom: 1px solid white;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    border-top: 1px solid transparent;
+  }
+}
