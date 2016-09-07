@@ -70,7 +70,12 @@ let currentWindow = {
     let isFullScreen = this.instance.isFullScreen()
     this.instance.setFullScreen(!isFullScreen);
   },
-
+  hide(){
+    this.instance.hide();
+  }, 
+  show(){
+    this.instance.show();
+  },
   isFullScreen(){
     return this.instance.isFullScreen();
   },

@@ -9,7 +9,7 @@ export default {
 
   app: {
     path: `file://${__dirname}/render-process/index.html`,
-    backgroundColorForWindow: '#212121',
+    backgroundColorForWindow: '#151515',
   },
 
   crashReporter: {

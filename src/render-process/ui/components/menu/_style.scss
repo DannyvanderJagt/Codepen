@@ -1,3 +1,6 @@
+@import './default.menu/_style.scss';
+@import './menu-item/_style.scss';
+
 .cdpn-menu{
 	flex-basis: 70px;
 	box-sizing: border-box;
@@ -11,10 +14,15 @@
 
   -webkit-app-region: drag;
 
+  transition: transform .5s ease-in-out;
   padding: 30px 0px;
 
   & > .icon{
     width: 25px;
     margin-bottom: 40px;
+  }
+
+  &.hidden{
+    transform: translateX(-71px);
   }
 }

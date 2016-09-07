@@ -35,7 +35,6 @@ let Window = {
     this.createWindow();
   },
 
-
   createWindow(){
     if(this.activeWindow){ return; }
 
@@ -53,15 +52,17 @@ let Window = {
     this.activeWindow = new BrowserWindow({
       width,
       height,
-      frame: false,
+      // frame: false,
+      titleBarStyle: 'hidden',
       center: true,
       backgroundColor: config.app.backgroundColorForWindow,
+      show: false,
     })
 
     // Load the app.
     this.activeWindow.loadURL(config.app.path);
 
-    // Listen for events.
+    // // Listen for events.
     this.activeWindow.on('close', this.windowWillClose.bind(this));
     this.activeWindow.on('closed', this.windowDidClose.bind(this));
   },
@@ -70,8 +71,7 @@ let Window = {
   windowDidClose(){
     this.activeWindow = undefined;
   },
-
-
+  
   openDevTools(){
     if(!this.activeWindow){ return; }
     this.activeWindow.webContents.openDevTools();

@@ -1,29 +1,11 @@
 import ReactDOM from 'react-dom';
-import React, {
-	Component
-} from 'react';
-
-import state, {
-	stateHandler
-} from '../state';
-
+import React, { Component } from 'react';
+import state, { stateHandler } from '../state';
 import router from './router';
-import Views, {
-	SplashScreen
-} from './views';
-
-import {
-	AppFrame,
-	WindowControls,
-	Menu,
-	Carousel,
-	Articles,
-}	from './components'
-
-import {
-	Content,
-} from './elements'
-
+import { AppFrame, WindowControls, Menu }	from './components';
+import Bases from './bases';
+import { currentWindow } from '@services';
+import { Content, CssTransitionFrame } from './elements';
 
 class App extends Component{
 	constructor(){
@@ -42,50 +24,29 @@ class App extends Component{
 			<AppFrame OS={this.state.OS}>
 				<WindowControls
 					visible={this.state.showWindowControls}/>
-				
-				<Content 
-					windowControlsAreVisible={this.state.showWindowControls}>
 
-					<Menu>
-						{this.state.menu}
-					</Menu>
+				<Content>
+					<Bases.FirstBase
+						{...this.state.router.firstBase}/>
 
-					<Content>
-						<Carousel
-							position={this.state.carousel}/>
+					<Menu
+						{...this.state.menu}
+						firstBaseIsVisible={this.state.router.firstBase.visible}/>
 
-						{/* Pen, Post, Collection, User Views*/}
-						<Articles
-							articles={this.state.articles}/>
+					<CssTransitionFrame 
+						className='cdpn-content cdpn-base-content'
+						type='opacity' 
+						visible={!this.state.router.firstBase.visible}>
 
-						{/* App related (no FullViews) */}
-						{/*<Preferences 
-							visible={this.state.showPreferences}/>
+							<Bases.SecondBase
+								{...this.state.router.secondBase}/>
+							<Bases.ThirdBase
+								{...this.state.router.thirdBase}/>
+							<Bases.FourthBase
+								{...this.state.router.fourthBase}/>
 
-						<Updates
-							visible={this.state.showUpdates}/>
-
-						<Assets
-							visisble={this.state.showAssets}/>
-						*/}
-					</Content>
-
-					{/* App related (FullViews) */}
-					<SplashScreen
-						visible={this.state.showSplashscreenView}/>
-					{/*<Sync
-						visible={this.showSync}/>
-					<Login
-						visible={this.showLogin}/>
-					<Features
-						visible={this.showFeatures}/>
-					<LandingPage
-						visible={this.showLandingPage}/>
-					<Updating 
-						visible={this.showUpdating}/>*/}
-			
+					</CssTransitionFrame>
 				</Content>
-
 
 			</AppFrame>
 		)
@@ -95,4 +56,7 @@ class App extends Component{
 
 ReactDOM.render(
 	<App/>,
-	document.getElementById('app-container'));
+	document.getElementById('app-container'), 
+	() => {
+		currentWindow.show();
+	});

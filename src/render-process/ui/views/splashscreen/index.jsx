@@ -3,15 +3,20 @@ import React, {
 } from 'react';
 
 import {
-	FullView
+	FlexView,
+	Content
 } from '@ui/elements';
 
 class SplashScreen extends Component{
 	render(){
 		return (
-			<FullView visible={this.props.visible}>
-				SplashScreen {JSON.stringify(this.props)};
-			</FullView>
+			<FlexView 
+				className='cdpn-splashscreen'
+				visible={this.props.visible}>
+				<Content>
+					<img src='assets/images/codepen-logo.svg'/>
+				</Content>
+			</FlexView>
 		)
 	}
 }

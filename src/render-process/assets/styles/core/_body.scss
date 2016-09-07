@@ -3,6 +3,10 @@
   -webkit-touch-callout: none;
 }
 
+::selection {
+	background:transparent;
+}
+
 body, html{
   background: $ui-background;
   height: 100%;

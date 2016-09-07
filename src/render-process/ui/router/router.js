@@ -1,4 +1,5 @@
 import routes from './routes';
+import state from '../../state';
 
 let router = {
 	index:{},
@@ -8,10 +9,14 @@ let router = {
 	},
 
 	createPathIndex(){
-		routes.forEach((route, pos) => {
-			route.paths.forEach((path) => {
-				this.index[path] = route;
-				this.index[path].level = pos + 1;
+		let bases = Object.keys(routes);
+		let base;
+
+		bases.forEach((baseName, pos) => {
+			base = routes[baseName];
+
+			base.forEach((route) => {
+				this.index[route] = baseName;
 			})
 		})
 	},
@@ -19,23 +24,18 @@ let router = {
 	goto(hash){
 		let args = hash.split(':');
 		let path = args.shift();
-		let route = this.index[path];
+		let baseName = this.index[path];
 
-		if(!route){ return; }
-		if(!route.focus){ return; }
+		if(!baseName){ return; }
 
-
-		// Blur other levels.
-		let i = route.level;
-		for(i; i < routes.length; i++){
-			console.log('blur', i, routes[i].blur ? true : false)
-			if(routes[i].blur){
-				routes[i].blur();
+		state.set({
+			router: {
+				[baseName]: {
+					visible: true,
+					routes: [path]
+				}
 			}
-		}
-
-
-		route.focus(path, args, hash);
+		})
 	}
 }
 

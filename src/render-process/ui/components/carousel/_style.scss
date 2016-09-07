@@ -6,6 +6,10 @@
 .cdpn-carousel-slider{
 	height: 100%;
 	display: flex;
-	width: 300%;
 	transition: transform .6s ease-in-out;
+}
+
+.cdpn-carousel-view{
+	flex: 1;
+	display: flex;
 }

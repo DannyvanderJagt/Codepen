@@ -1,24 +1,26 @@
-import React, {
-	Component
-} from 'react';
-
-import {
-	Pens,
-	Posts,
-	Collections,
-} from '@ui/views';
+import React, {	Component } from 'react';
+import CarouselView from './view';
 
 class Carousel extends Component{
+	getPosition(){
+		return this.props.position || 0
+	}
+	calculateStyle(){
+		let position = this.getPosition();
+		let numberOfChildren = this.props.children.length;
+
+		return {
+			transform: `translateX(-${(100/numberOfChildren) * position}%`,
+			width: `${numberOfChildren * 100}%`
+		}
+	}
 	render(){
-		let position = this.props.position || 0;
-		let style = {transform: `translateX(-${(100/3) * position}%`};
-		
+		let style = this.calculateStyle();
+		console.log(this.getPosition());
 		return (
 			<div className='cdpn-carousel'>
 				<div className='cdpn-carousel-slider' style={style}>
-					<Pens/>
-					<Posts/>
-					<Collections/>
+					{this.props.children}
 				</div>
 			</div>
 		)
@@ -26,3 +28,4 @@ class Carousel extends Component{
 }
 
 export default Carousel;
+export { CarouselView };

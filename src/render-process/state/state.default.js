@@ -1,25 +1,33 @@
 // UI state.
 module.exports = {
 
-	// Controlled by: ui/router
-	history: [],
-	pens: [],
-
-	// Controlled by: Router/view
-	menu: undefined,
+	// Controlled by: Menu
+	menu: {
+		visible: true,
+		content: undefined,
+	},
 
 	// Routes.
-	carousel: 0,
-	articles: [],
-	showSplashscreenView: false,
-	showPreferencesView: false,
-	showUpdatesView: false,
-	showAssetsView: false,
-	showSyncView: false,
-	showLoginView: false,
-	showFeaturesView: false,
-	showLandingpageView: false,
-	showUpdatingView: false,
+	// Controlled by: ui/router
+	router: {
+		history: [],
+		firstBase: {
+			visible: false,
+			routes: [], // One route only! 
+		}, 
+		secondBase: {
+			visible: false,
+			routes: [], // One route only!
+		},	
+		thirdBase: {
+			visible: false,
+			routes: [], // Multiple routes, only 1 visible.
+		},	
+		fourthBase: {
+			visible: false,
+			routes: [], // Multiple routes, can be multi visible
+		}, 
+	},
 
 	// Controled by: services/os
 	OS: {
@@ -30,6 +38,4 @@ module.exports = {
 
 	// WindowControls
 	showWindowControls: true,
-
-
 }
