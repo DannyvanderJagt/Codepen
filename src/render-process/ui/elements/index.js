@@ -1,9 +1,6 @@
-import Content from './content';
-import CssTransitionFrame from './css-transition-frame';
-import FlexView from './flex-view';
+import ToolTip, { ToolTipItem } from './tooltip';
 
 export {
-	Content,
-	CssTransitionFrame,
-	FlexView,
+	ToolTip,
+	ToolTipItem,
 }

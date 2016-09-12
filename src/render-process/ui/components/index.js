@@ -1,13 +1,11 @@
 import AppFrame from './app-frame';
-import WindowControls from './window-controls';
-import Menu from './menu';
-import Carousel from './carousel';
-// import Articles from './articles';
+import TopMenu from './top-menu';
+import BottomMenu from './bottom-menu';
+import Content from './content';
 
 export {
 	AppFrame,
-	WindowControls,
-	Menu,
-	Carousel,
-	// Articles,
+	TopMenu,
+	BottomMenu,
+	Content,
 }

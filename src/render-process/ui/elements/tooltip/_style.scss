@@ -1,0 +1,121 @@
+.tooltip{
+	transform-origin: bottom center;
+	display: block;
+
+	background: $united-nations-blue;
+	border-radius: 3px;
+	display: flex;
+	flex-direction: column;
+	color: white;
+	margin-bottom: 20px;
+
+	& > .arrow{
+		position: relative;
+		display: block;
+		background:  $united-nations-blue;
+		width: 10px;
+		height: 10px;
+	  margin-left: calc(50% - 5px);
+	  margin-bottom: -5px;
+	  margin-top: -5px;
+    transform: rotate(45deg);
+	}
+
+	& > .item{
+		padding: 15px 15px;
+		font-size: .8em;
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+
+		& > img{
+			margin-right: 10px;
+		}
+
+		&:hover{
+			background: rgba(0,0,0, .1);
+		}
+	}
+}
+
+.tooltip-container{
+	position: absolute;
+	display: block;
+	transform: translateY(-100%);
+	display: flex;
+	animation: tooltip-hide 0s ease-in both;
+}
+
+.div-with-tooltip{
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: center;
+
+	&.hidden .tooltip-container {
+		animation: tooltip-hide .3s ease-in both;
+	}
+	&.visible .tooltip-container{
+		animation: tooltip-show .3s ease-in both;
+	}
+
+	&.bottom{
+		&.hidden .tooltip-container {
+			animation: tooltip-hide-bottom .3s ease-in both;
+		}
+		&.visible .tooltip-container{
+			animation: tooltip-show-bottom .3s ease-in both;
+		}
+	}
+}
+
+
+@keyframes tooltip-show{
+	0%{
+		transform: translateY(-95%);
+		opacity: 0;
+		visibility: hidden;
+	}
+	100%{
+		transform: translateY(-100%);
+		opacity: 1;
+		visibility: block;
+	}
+}
+@keyframes tooltip-hide{
+	0%{
+		transform: translateY(-100%);
+		opacity: 1;
+		visibility: block;
+	}
+	100%{
+		transform: translateY(-95%);
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+
+
+@keyframes tooltip-show-bottom{
+	0%{
+		transform: translateY(60%);
+		opacity: 0;
+		visibility: hidden;
+	}
+	100%{
+		transform: translateY(65%);
+		opacity: 1;
+		visibility: block;
+	}
+}
+@keyframes tooltip-hide-bottom{
+	0%{
+		transform: translateY(65%);
+		opacity: 1;
+		visibility: block;
+	}
+	100%{
+		transform: translateY(60%);
+		opacity: 0;
+		visibility: hidden;
+	}
+}

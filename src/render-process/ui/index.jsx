@@ -1,11 +1,8 @@
 import ReactDOM from 'react-dom';
 import React, { Component } from 'react';
 import state, { stateHandler } from '../state';
-import router from './router';
-import { AppFrame, WindowControls, Menu }	from './components';
-import Bases from './bases';
-import { currentWindow } from '@services';
-import { Content, CssTransitionFrame } from './elements';
+import { Window } from '@services';
+import { AppFrame, TopMenu, BottomMenu, Content } from '@ui/components';
 
 class App extends Component{
 	constructor(){
@@ -21,33 +18,15 @@ class App extends Component{
 
 	render(){
 		return (
-			<AppFrame OS={this.state.OS}>
-				<WindowControls
-					visible={this.state.showWindowControls}/>
+			<AppFrame>
+				<TopMenu/>
 
 				<Content>
-					<Bases.FirstBase
-						{...this.state.router.firstBase}/>
 
-					<Menu
-						{...this.state.menu}
-						firstBaseIsVisible={this.state.router.firstBase.visible}/>
-
-					<CssTransitionFrame 
-						className='cdpn-content cdpn-base-content'
-						type='opacity' 
-						visible={!this.state.router.firstBase.visible}>
-
-							<Bases.SecondBase
-								{...this.state.router.secondBase}/>
-							<Bases.ThirdBase
-								{...this.state.router.thirdBase}/>
-							<Bases.FourthBase
-								{...this.state.router.fourthBase}/>
-
-					</CssTransitionFrame>
 				</Content>
 
+				<BottomMenu
+					user={this.state.user}/>
 			</AppFrame>
 		)
 	}
@@ -58,5 +37,5 @@ ReactDOM.render(
 	<App/>,
 	document.getElementById('app-container'), 
 	() => {
-		currentWindow.show();
+		Window.show();
 	});

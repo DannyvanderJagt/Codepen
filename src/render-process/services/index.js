@@ -1,14 +1,9 @@
-import cache from './cache';
-import codepen from './codepen';
-import currentWindow from './current-window';
-import connectivity from './connectivity';
-import OS from './os';
-import menu from './menu';
+import Cache from './cache';
+import Window from './window';
+import Connectivity from './connectivity';
 
 export {
-	cache,
-	codepen,
-	currentWindow,
-	OS,
-	menu,
+	Cache,
+	Connectivity,
+	Window,
 }

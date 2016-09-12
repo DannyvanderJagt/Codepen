@@ -8,35 +8,11 @@
 @import 'core/app';
 @import 'core/headers';
 
-// OS
-@import 'OS/macOS';
-@import 'OS/windows';
-
-// Internal UI Style.
-@import 'ui/background-icon';
-@import 'ui/input';
-@import 'ui/line';
-@import 'ui/button';
-
-// Bases.
-@import '@ui/bases/_style.scss';
+// Components
+@import '@ui/components/app-frame/_style.scss';
+@import '@ui/components/top-menu/_style.scss';
+@import '@ui/components/bottom-menu/_style.scss';
+@import '@ui/components/content/_style.scss';
 
 // Elements
-@import '@ui/elements/content/_style.scss';
-@import '@ui/elements/css-transition-frame/_style.scss';
-@import '@ui/elements/flex-view/_style.scss';
-
-// Core Components
-@import '@ui/components/window-controls/_style.scss';
-@import '@ui/components/menu/_style.scss';
-@import '@ui/components/carousel/_style.scss';
-
-// Views
-@import '@ui/views/pens/_style.scss';
-@import '@ui/views/posts/_style.scss';
-@import '@ui/views/collections/_style.scss';
-@import '@ui/views/pen/_style.scss';
-@import '@ui/views/post/_style.scss';
-@import '@ui/views/collection/_style.scss';
-@import '@ui/views/splashscreen/_style.scss';
-
+@import '@ui/elements/tooltip/_style.scss';

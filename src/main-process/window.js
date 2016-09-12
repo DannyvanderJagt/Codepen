@@ -52,8 +52,7 @@ let Window = {
     this.activeWindow = new BrowserWindow({
       width,
       height,
-      // frame: false,
-      titleBarStyle: 'hidden',
+      frame: false,
       center: true,
       backgroundColor: config.app.backgroundColorForWindow,
       show: false,
@@ -67,8 +66,11 @@ let Window = {
     this.activeWindow.on('closed', this.windowDidClose.bind(this));
   },
 
-  windowWillClose(){},
+  windowWillClose(){
+    console.log('will close');
+  },
   windowDidClose(){
+    console.log('window did close');
     this.activeWindow = undefined;
   },
   

@@ -3,4 +3,5 @@ module.exports = {
 	username: undefined,
 	password: undefined,
 
+	image: undefined,
 }
